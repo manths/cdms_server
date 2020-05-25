@@ -3,7 +3,7 @@ const router = express.Router()
 const cors = require('cors');
 
 const accountSid = 'AC93be291c86ed437a550544b40f482687'
-const authToken = '93d243b75a4021dd04a442a521318483'
+const authToken = ''
 const client = require('twilio')(accountSid, authToken)
 
 router.use(cors())
