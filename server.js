@@ -10,18 +10,6 @@ const sms = require('./sms/sms')
 const facultySchema = require('./model/facPassword')
 const studentSchema = require('./model/studPassword')
 
-
-// const accountSid = 'AC93be291c86ed437a550544b40f482687'
-// const authToken = '93d243b75a4021dd04a442a521318483'
-// const client = require('twilio')(accountSid,authToken)
-
-// client.messages.create({
-//     body:'hi im manthan',
-//     from:'+12056712975',
-//     to:'+919974857911'
-// }).then(message=>console.log(message))
-// .catch(error=>console.log(error))
-
 app.use('/find', router)
 app.use('/sms', sms)
 
