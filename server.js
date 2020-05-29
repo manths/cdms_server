@@ -18,7 +18,8 @@ app.use(express.json())
 require('http');
 
 //litsen on post 
-app.listen(5000)
+const PORT = process.env.PORT || 30001
+app.listen(PORT)
 
 //home page
 app.get('/', (req, res) => {
@@ -77,7 +78,8 @@ app.post('/student', async (req, res) => {
 })
 
 //connection with mongoDB
-mongoose.connect('mongodb://localhost/cdms', { useNewUrlParser: true, useUnifiedTopology: true })
+const connect = process.env.MONGO_URL || 'mongodb://localhost/cdms'
+mongoose.connect(connect, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.connection
     .on('error', (error) => console.log(error))
     .once('open', () => console.log('connected'))
