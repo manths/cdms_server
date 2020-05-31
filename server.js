@@ -18,7 +18,7 @@ app.use(express.json())
 require('http');
 
 //litsen on post 
-const PORT = process.env.PORT || 30001
+const PORT = process.env.PORT || 5000
 app.listen(PORT)
 
 //home page
@@ -78,8 +78,9 @@ app.post('/student', async (req, res) => {
 })
 
 //connection with mongoDB
-const connect = process.env.MONGO_URL || 'mongodb://localhost/cdms'
+const connect = process.env.MONGO_URL || 'mongodb+srv://manthan:manthan@demo-q0ewp.mongodb.net/test?retryWrites=true&w=majority' 
 mongoose.connect(connect, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.connection
     .on('error', (error) => console.log(error))
     .once('open', () => console.log('connected'))
+    
